@@ -21,8 +21,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
     
-    [self createNormalShadowWithShadowOffset];
-    //[self createTrapezoidalShadowToImage];
+    //[self createNormalShadowWithShadowOffset];
+    [self createTrapezoidalShadowToImage];
     //[self createOverallShadowToImage];
     //[self createEllepticalShadowBeneathImage];
     //[self createRoundedCornerShadow];
@@ -52,10 +52,10 @@
     
     //createing a trapezoidal path for shadow
     UIBezierPath *path = [UIBezierPath bezierPath];
-    [path moveToPoint:CGPointMake(size.width * 0.20f, size.height * 0.80f)];
+    [path moveToPoint:CGPointMake(size.width * 0.17f, size.height * 0.80f)];
     [path addLineToPoint:CGPointMake(size.width * 0.80f, size.height * 0.80f)];
     [path addLineToPoint:CGPointMake(size.width * 1.20f, size.height * 1.20f)];
-    [path addLineToPoint:CGPointMake(size.width * -0.20f, size.height * 1.20f)];
+    [path addLineToPoint:CGPointMake(size.width * -0.23f, size.height * 1.20f)];
     [path closePath];
 
     //applying path as shadow to image
@@ -109,7 +109,7 @@
     UIBezierPath* path = [UIBezierPath bezierPath];
     
     //strating from left pont
-    [path moveToPoint:CGPointZero];
+    [path moveToPoint:CGPointMake(0.0, size.height)];
     [path addLineToPoint:CGPointMake(0.0, size.height + 20.0f)];
     
     //curved bottom part
@@ -118,7 +118,7 @@
             controlPoint2:CGPointMake(size.width - 20.0f, size.height)];
     
     //closing the path by going upper top part
-    [path addLineToPoint:CGPointMake(size.width, 0.0f)];
+    [path addLineToPoint:CGPointMake(size.width, size.height)];
 
     //close the path and apply the path as shadow
     [path closePath];
